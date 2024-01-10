@@ -7,7 +7,7 @@ export default function App() {
     return (
         <div>
             <div>
-                <header>Apple Member</header>
+                <header>peach Member</header>
             </div>
             <div>
                 <h1>
