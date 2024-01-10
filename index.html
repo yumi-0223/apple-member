@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    
+    <div id="content"></div>
+    <script type="module" src="./src/main.jsx"></script>
+    <main>
+      <div class="print">
+      <div class="menu" id="day1">
+      <h2 class="day"></h2>
+      <hr>
+      <p class="practice"></p>
+      <p class="think"></p>
+      </div>
+      <div class="menu" id="day2">
+        <h2 class="day"></h2>
+        <hr>
+        <p class="practice"></p>
+        <p class="think"></p>
+      </div>
+
+      <div class="pDayData" id="15">
+        <h3 class="day"></h3>
+        <p class="true"></p>
+      </div>
+      <div class="pDayData" id="16">
+        <h3 class="day"></h3>
+        <p class="true"></p>
+      </div>
+      <div class="pDayData" id="17">
+        <h3 class="day"></h3>
+        <p class="true"></p>
+      </div>
+      <div class="pDayData" id="18">
+        <h3 class="day"></h3>
+        <p class="true"></p>
+      </div>
+      <div class="pDayData" id="19">
+        <h3 class="day"></h3>
+        <p class="true"></p>
+      </div>
+      <div class="pDayData" id="22">
+        <h3 class="day"></h3>
+        <p class="true"></p>
+      </div>
+      <div class="pDayData" id="23">
+        <h3 class="day"></h3>
+        <p class="true"></p>
+      </div>
+      <div class="pDayData" id="24">
+        <h3 class="day"></h3>
+        <p class="true"></p>
+      </div>
+      <div class="pDayData" id="25">
+        <h3 class="day"></h3>
+        <p class="true"></p>
+      </div>
+      <div class="pDayData" id="26">
+        <h3 class="day"></h3>
+        <p class="true"></p>
+      </div>
+      <div class="pDayData" id="29">
+        <h3 class="day"></h3>
+        <p class="true"></p>
+      </div>
+      <div class="pDayData" id="30">
+        <h3 class="day"></h3>
+        <p class="true"></p>
+      </div>
+      </div>
+
+
+    </main>
+    <script>
+
+     function practiceData (dayId,pData){
+       fetch(pData, {
+         headers: {
+           "X-API-KEY": "5Wgo3gmAp24cnxjrd4BhSr7YbwCdKlMhRqWk"
+         }
+       })
+         .then(res => res.json())
+         .then(json => {
+          const dayData=new Date(json.day);
+          const y=dayData.getFullYear();
+          const m=dayData.getMonth()+1;
+          const d=dayData.getDate();
+          const printDay=`${y}.${m}.${d}`;
+          document.getElementById(dayId).getElementsByClassName("day")[0].innerHTML = printDay;
+
+          const textchange=json.practice.replace(/\n/g, '<br>');
+          document.getElementById(dayId).getElementsByClassName("practice")[0].innerHTML = textchange;
+          const textchange2=json.think.replace(/\n/g, '<br>');
+          document.getElementById(dayId).getElementsByClassName("think")[0].innerHTML = textchange2;
+        })
+      }
+
+      practiceData("day1","https://aapple.microcms.io/api/v1/aapple/20240115")
+      practiceData("day2","https://aapple.microcms.io/api/v1/aapple/20240119")
+
+      function practiceDayData(dayDataId,ppData){
+        fetch(ppData, {
+         headers: {
+           "X-API-KEY": "5Wgo3gmAp24cnxjrd4BhSr7YbwCdKlMhRqWk"
+         }
+       })
+       .then(res => res.json())
+         .then(json => {
+          const dayData=new Date(json.day);
+          const y=dayData.getFullYear();
+          const m=dayData.getMonth()+1;
+          const d=dayData.getDate();
+          const printDay=`${y}.${m}.${d}`;
+          document.getElementById(dayDataId).getElementsByClassName("day")[0].innerHTML = printDay;
+
+          let trueData;
+          if(json.true==true){
+              trueData="あり"        
+          }else{
+              trueData="なし"
+          }
+          document.getElementById(dayDataId).getElementsByClassName("true")[0].innerHTML=trueData;
+       })
+}
+       
+    
+    
+
+    practiceDayData("15","https://aapple.microcms.io/api/v1/aaapple/20240115")
+    practiceDayData("16","https://aapple.microcms.io/api/v1/aaapple/20240116")
+    practiceDayData("17","https://aapple.microcms.io/api/v1/aaapple/20240117")
+    practiceDayData("18","https://aapple.microcms.io/api/v1/aaapple/20240118")
+    practiceDayData("19","https://aapple.microcms.io/api/v1/aaapple/20240119")
+    practiceDayData("22","https://aapple.microcms.io/api/v1/aaapple/20240122")
+    practiceDayData("23","https://aapple.microcms.io/api/v1/aaapple/20240123")
+    practiceDayData("24","https://aapple.microcms.io/api/v1/aaapple/20240124")
+    practiceDayData("25","https://aapple.microcms.io/api/v1/aaapple/20240125")
+    practiceDayData("26","https://aapple.microcms.io/api/v1/aaapple/20240126")
+    practiceDayData("29","https://aapple.microcms.io/api/v1/aaapple/20240129")
+    practiceDayData("30","https://aapple.microcms.io/api/v1/aaapple/20240130")
+
+  </script>
+ </body>
+</html>
