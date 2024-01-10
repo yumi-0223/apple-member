@@ -1,9 +1,16 @@
-body {
+
+
+  body {
     margin: 50px;
     padding: 0;
     text-align: center;
-    background-color:black;
-  }
+    background-color: black;
+    padding-top: 100px; 
+}
+
+.h{
+  position: relative;
+}
 
   header{
     color:white;
@@ -61,8 +68,14 @@ h1{
   font-size: 1.0em;
 }
 
-footer{
-  color:white;
-  font-size:1.0em;
+
+footer {
+  color: white;
+  font-size: 0.5em;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left:0px;
+  background-color: red;
 }
 
