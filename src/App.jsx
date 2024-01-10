@@ -18,7 +18,7 @@ export default function App() {
             </div>
             <footer className="footer">
                 <p>日本大学文理学部情報科学科 Webプログラミングの演習課題　5422048　葛畑友美</p>
-                <p>microCMSを利用</p>
+                <p><a href="https://microcms.io/">microCMS</a>を利用</p>
             </footer>
         </div>
     )
