@@ -20,12 +20,6 @@
     background-color: red;
 }
 
-h1{
-    line-height: 8;
-    font-size: 1.5em;
-    color:white;
-}
-
 footer {
   color: white;
   font-size: 0.5em;
@@ -34,6 +28,16 @@ footer {
   width: 100%;
   left:0px;
   background-color: red;
+}
+
+h1{
+  font-size: 2.0em;
+  color:white;
+}
+
+h2{
+  font-size: 0.5em;
+  color: white;
 }
 
 h3{

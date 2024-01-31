@@ -15,6 +15,9 @@ export default function App() {
                     <p>連絡事項</p>
                 </h1>
                 </h>
+                <h2>
+                    <p>練習メニュー、日程が載っています。確認お願いします。</p>
+                </h2>
             </div>
             <footer className="footer">
                 <p>日本大学文理学部情報科学科 Webプログラミングの演習課題　5422048　葛畑友美</p>
